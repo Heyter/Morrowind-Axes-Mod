@@ -6,6 +6,7 @@ Fixes:
 - Lack of a base entity for thrown axes which are exactly the same aside from model and what weapon they give (Made 1 thrown axe and the weapons just set the model to the "parent" weapon's world model and set the class to the "parent" weapon's class)
 - Exploits because of the bad method of dealing damage
 - Errors in the thrown swep relating to changing physics rules inside a callback
+- Not using predicted means of setting the next primary leading to bad things
 
 #To change damage
 - Go into the weapon file and put in a line `SWEP.Primary.Damage = ` and then the damage you want, by default all of them do 50 damage.
