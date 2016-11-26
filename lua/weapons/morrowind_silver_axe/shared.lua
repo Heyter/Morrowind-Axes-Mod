@@ -14,4 +14,6 @@ SWEP.Purpose		= "Silver is typically used to enhance the appearance of the item 
 
 SWEP.ViewModel      = "models/morrowind/silver/axe/v_silveraxe.mdl"
 SWEP.WorldModel   = "models/morrowind/silver/axe/w_silveraxe.mdl"
-SWEP.KnifeEnt = "ent_silver_axe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

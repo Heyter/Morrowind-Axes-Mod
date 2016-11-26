@@ -15,4 +15,6 @@ SWEP.Purpose		= "A Dwemer Battleaxe, though heavier than steel, are highly sough
 
 SWEP.ViewModel      = "models/morrowind/dwemer/battleaxe/v_dwemerbattleaxe.mdl"
 SWEP.WorldModel   = "models/morrowind/dwemer/battleaxe/w_dwemerbattleaxe.mdl"
-SWEP.KnifeEnt = "ent_dwemer_battleaxe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

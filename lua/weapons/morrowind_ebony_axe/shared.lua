@@ -14,4 +14,6 @@ SWEP.Purpose		= "Ebony axes are created from a rare form of volcanic glass burie
 
 SWEP.ViewModel      = "models/morrowind/ebony/axe/v_ebonyaxe.mdl"
 SWEP.WorldModel   = "models/morrowind/ebony/axe/w_ebonyaxe.mdl"
-SWEP.KnifeEnt = "ent_ebony_axe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

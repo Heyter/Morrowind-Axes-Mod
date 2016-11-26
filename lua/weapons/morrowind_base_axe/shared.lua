@@ -19,10 +19,8 @@ SWEP.Purpose		= "A Dwemer Waraxe, though heavier than steel, are highly sought a
 SWEP.ViewModelFOV	= 72
 SWEP.ViewModelFlip	= false
 
-SWEP.Spawnable			= true
-SWEP.AdminSpawnable		= true
-
-SWEP.NextStrike = 0;
+SWEP.Spawnable			= false
+SWEP.AdminSpawnable		= false
   
 SWEP.ViewModel      = "models/morrowind/dwemer/axe/v_dwemeraxe.mdl"
 SWEP.WorldModel   = "models/morrowind/dwemer/axe/w_dwemeraxe.mdl"
@@ -46,15 +44,7 @@ SWEP.Secondary.Ammo		= "none"
 SWEP.ShellEffect			= "none"				// "effect_mad_shell_pistol" or "effect_mad_shell_rifle" or "effect_mad_shell_shotgun"
 SWEP.ShellDelay			= 0
 
-SWEP.Pistol				= true
-SWEP.Rifle				= false
-SWEP.Shotgun			= false
-SWEP.Sniper				= false
-
-SWEP.RunArmOffset 		= Vector (0.3671, 0.1571, 5.7856)
-SWEP.RunArmAngle	 		= Vector (-37.4833, 2.7476, 0)
-
-SWEP.Sequence			= 0
+SWEP.Throwable = true
 
 SWEP.KnifeEnt = "ent_dwemer_axe"
 util.PrecacheSound("weapons/axe/morrowind_axe_deploy1.wav")
@@ -75,10 +65,9 @@ function SWEP:Deploy()
 	self.Owner:EmitSound("weapons/axe/morrowind_axe_deploy1.wav")
 	return true
 end
-
 function SWEP:PrimaryAttack()
 	self:SetNextPrimaryFire( CurTime() + .5 )
-
+	if (IsFirstTimePredicted()) then
  	
 	local tracedata = {}
 
@@ -108,14 +97,15 @@ function SWEP:PrimaryAttack()
 			local dmginfo = DamageInfo()
 			dmginfo:SetAttacker((IsValid(self.Owner) and self.Owner) or self)
 			dmginfo:SetInflictor(self)
-			dmginfo:SetDamage(self.Primary.Damage)
+			dmginfo:SetDamage(self.Primary.Damage or 50)
 
-			trace.Entity:TakeDamageInfo(dmginfo)
+			tr.Entity:TakeDamageInfo(dmginfo)
 	else
 		self.Owner:SetAnimation( PLAYER_ATTACK1 )
 		self.Weapon:SendWeaponAnim( ACT_VM_HITCENTER )
 		self.Weapon:EmitSound("weapons/axe/morrowind_axe_slash.wav")
 	end
+end
 end
 
 function RemoveKnife( ent )
@@ -126,16 +116,15 @@ end
 
 function SWEP:SecondaryAttack()
 
-	if self.Weapon:GetNetworkedBool("Holsted") or self.Owner:KeyDown(IN_SPEED) or self.Owner:GetAmmoCount(self.Primary.Ammo) < 1 then return end
+	if !self.Throwable or self.Weapon:GetNetworkedBool("Holstered") or self.Owner:KeyDown(IN_SPEED) or self.Owner:GetAmmoCount(self.Primary.Ammo) < 1 then return end
 
 	self.Weapon:EmitSound("weapons/axe/morrowind_axe_slash.wav")
 	self.Weapon:SetNextPrimaryFire(CurTime() + 1)
 	self.Weapon:SetNextSecondaryFire(CurTime() + 1)
 	self.Weapon:SendWeaponAnim(ACT_VM_DRAW)
 	self.Owner:RemoveAmmo(1, self.Primary.Ammo)
-
 	if (SERVER) then
-		local knife = ents.Create(self.KnifeEnt)
+		local knife = ents.Create("ent_thrown_axe")
 		knife:SetAngles(self.Owner:EyeAngles())
 		local pos = self.Owner:GetShootPos() + self.Owner:GetForward() * 5 + self.Owner:GetRight() * 9 + self.Owner:GetUp() * -5
 		knife:SetPos(pos)
@@ -145,10 +134,16 @@ function SWEP:SecondaryAttack()
 		knife:Spawn()
 		knife:Activate()
 
+		knife:SetModel(self.WorldModel)
+		knife.ParentWeapon = self.ClassName
+		
 		self.Owner:SetAnimation(PLAYER_ATTACK1)
 
 		local phys = knife:GetPhysicsObject()
 		phys:SetVelocity(self.Owner:GetAimVector() * 1500)
 		phys:AddAngleVelocity(Vector(0, 500, 0))
+	end
+	if(!self.Weapon:HasAmmo()) then
+		self.Weapon:Remove()
 	end
 end

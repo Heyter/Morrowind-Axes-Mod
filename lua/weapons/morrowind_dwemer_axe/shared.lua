@@ -14,4 +14,6 @@ SWEP.Purpose		= "A Dwemer Waraxe, though heavier than steel, are highly sought a
 
 SWEP.ViewModel      = "models/morrowind/dwemer/axe/v_dwemeraxe.mdl"
 SWEP.WorldModel   = "models/morrowind/dwemer/axe/w_dwemeraxe.mdl"
-SWEP.KnifeEnt = "ent_dwemer_axe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

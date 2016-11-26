@@ -14,4 +14,6 @@ SWEP.Purpose		= "Steel,made from a refined form of iron, is another of the more 
 
 SWEP.ViewModel      = "models/morrowind/steel/battleaxe/v_steelbattleaxe.mdl"
 SWEP.WorldModel   = "models/morrowind/steel/battleaxe/w_steelbattleaxe.mdl"
-SWEP.KnifeEnt = "ent_steel_battleaxe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

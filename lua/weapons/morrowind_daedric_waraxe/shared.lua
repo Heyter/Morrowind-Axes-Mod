@@ -14,4 +14,6 @@ SWEP.Purpose		= "Daedric weapons are made from raw ebony which has been refined 
   
 SWEP.ViewModel      = "models/morrowind/daedric/waraxe/v_daedricwaraxe.mdl"
 SWEP.WorldModel   = "models/morrowind/daedric/waraxe/w_daedricwaraxe.mdl"
-SWEP.KnifeEnt = "ent_daedric_waraxe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

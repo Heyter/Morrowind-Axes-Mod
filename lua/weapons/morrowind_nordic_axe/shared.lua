@@ -14,4 +14,6 @@ SWEP.Purpose		= "Nordic weapons are high quality steel weapons enchanted with th
 
 SWEP.ViewModel      = "models/morrowind/nordic/axe/v_nordicwaraxe.mdl"
 SWEP.WorldModel   = "models/morrowind/nordic/axe/w_nordicwaraxe.mdl"
-SWEP.KnifeEnt = "ent_nordic_axe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

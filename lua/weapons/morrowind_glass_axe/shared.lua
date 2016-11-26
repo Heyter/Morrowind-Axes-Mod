@@ -14,4 +14,6 @@ SWEP.Purpose		= "Glass weapons and armor are an ornate design: light and flexibl
 
 SWEP.ViewModel      = "models/morrowind/glass/axe/v_glassaxe.mdl"
 SWEP.WorldModel   = "models/morrowind/glass/axe/w_glassaxe.mdl"
-SWEP.KnifeEnt = "ent_glass_axe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

@@ -9,9 +9,12 @@ if( CLIENT ) then
 	SWEP.DrawAmmo = false
 	SWEP.DrawCrosshair = false
 end
+
 SWEP.Base = "morrowind_base_axe"
 SWEP.Purpose		= "The spiked chitin war axe favored by Ashlander and Great House Dunmer is in some ways more like a mace than an axe."
   
 SWEP.ViewModel      = "models/morrowind/chitin/axe/v_chitinaxe.mdl"
 SWEP.WorldModel   = "models/morrowind/chitin/axe/w_chitinaxe.mdl"
-SWEP.KnifeEnt = "ent_chitin_axe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

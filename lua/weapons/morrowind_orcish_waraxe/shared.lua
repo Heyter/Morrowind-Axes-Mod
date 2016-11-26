@@ -14,4 +14,6 @@ SWEP.Purpose		= "Orcish armor is an ornate, light steel plate design which is wo
   
 SWEP.ViewModel      = "models/morrowind/orcish/waraxe/v_orcishwaraxe.mdl"
 SWEP.WorldModel   = "models/morrowind/orcish/waraxe/w_orcishwaraxe.mdl"
-SWEP.KnifeEnt = "ent_orcish_waraxe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true

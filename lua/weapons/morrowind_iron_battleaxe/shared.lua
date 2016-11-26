@@ -14,4 +14,6 @@ SWEP.Purpose		= "Iron axes are the the most abundant and cheap axes available. U
 
 SWEP.ViewModel      = "models/morrowind/iron/battleaxe/v_ironbattleaxe.mdl"
 SWEP.WorldModel   = "models/morrowind/iron/battleaxe/w_battleaxe.mdl"
-SWEP.KnifeEnt = "ent_iron_battleaxe"
+SWEP.Category = "Morrowind Axes"
+SWEP.Spawnable			= true
+SWEP.AdminSpawnable		= true
