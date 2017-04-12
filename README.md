@@ -14,7 +14,3 @@ Fixes:
 # To make an axe unthrowable (or all)
 - To make a single axe unthrowable go into the weapon file for that axe and put `SWEP.Throwable = false`
 - To make ALL AXES unthrowable go into the base axe file and change `SWEP.Throwable` to equal false
-
-# Making it Downloadable
-- Right now, if you were to put this directly into your server files it wouldn't download because it doesn't have the code to send the files to the client. I uploaded a pack with only the content to workshop that you don't need to add to your server, just have clients download it `resource.AddWorkshop("806919940")` 
-- Content pack: http://steamcommunity.com/sharedfiles/filedetails/?id=806919940
