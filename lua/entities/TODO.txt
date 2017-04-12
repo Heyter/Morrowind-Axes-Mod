@@ -1,1 +1,0 @@
-Make all of these into 1 entity which can have the normal weapon set and the model set, those are only differences
